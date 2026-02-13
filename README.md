@@ -1,2 +1,3 @@
-# Sole-Sklek
-IoT sistem za mjerenje pravilno urađenih sklekova. NodeMCU detektuje sklekove i u realnom vremenu šalje podatke na web aplikaciju. Web stranica prikazuje brojač i podesivi tajmer, omogućava start/reset, LED semafor, zvučne signale i kontrolu vježbe putem interneta.
+Ovaj IoT projekat služi za mjerenje pravilno izvedenih sklekova uz pomoć NodeMCU mikrokontrolera. Sistem detektuje svaki ispravan sklek i putem interneta šalje podatke na web aplikaciju u realnom vremenu. Na web stranici se prikazuje veliki brojač sklekova i tajmer koji korisnik može podesiti, pokrenuti ili resetovati.
+
+Prije početka vježbe postoji faza pripreme uz LED semafor (crvena, žuta, zelena) i zvučne signale „spremi se, pozor, kreni“. Omogućeno je mjerenje početne visine ispravljenih ruku radi tačnog očitavanja sklekova. Po isteku vremena oglašava se alarm, crvena LED treperi, a vježba se završava. Web aplikacija omogućava potpunu kontrolu sistema na daljinu.
