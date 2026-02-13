@@ -1,0 +1,414 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* kontrolira vertikalno poravnanje */
+    align-items: flex-start;     /* lijevo poravnanje */
+    position: relative;
+    background-image: url('gordon-cowie-ISg1JhN_vFk-unsplash.jpg');
+    background-size: cover;
+    background-position: center 20%;
+}
+
+#bodySlika{
+    position: absolute; /* omogućava slobodno pozicioniranje po ekranu */
+       top:-80px;
+       left:-50px;  /* udaljenost od lijeve strane */
+    width: 300px;       /* širina slike */
+    height: auto;       /* visina proporcionalna širini */
+    z-index: 1;      
+}
+#Copyright{
+    position: absolute; /* omogućava slobodno pozicioniranje po ekranu */
+       bottom:-25px;
+       left:750px; 
+       font-size: 30px;
+
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('gordon-cowie-ISg1JhN_vFk-unsplash.jpg');
+    background-size: cover;
+    background-position: center 20%; /* lagano pomaknuto prema gore */
+    opacity: 0.5; /* samo pozadina je prozirna */
+    z-index: -1;  /* ostali sadržaj ostaje iznad */
+    filter: blur(402px);
+}
+
+#brojLabel{
+
+    color: white;
+    font-size: 450px;
+    position: absolute;
+    top: 5%;        /* gornja granica na sredini ekrana */
+    left: 50%;       /* lijeva granica na sredini */
+    transform: translate(-50%, 50px); /* centriranje + pomak 50px dolje */
+     text-shadow: 15px 15px 10px rgba(0, 0, 0, 1.0);
+}
+
+#tajmerLabel{
+
+    color: white;
+    font-size: 200px;
+    position: absolute;
+    top: 60%;        /* gornja granica na sredini ekrana */
+    left: 50%;       /* lijeva granica na sredini */
+    transform: translate(-50%, 50px); /* centriranje + pomak 50px dolje */
+    text-shadow: 15px 15px 10px rgba(0, 0, 0, 1.0);
+}
+#Duzina{
+
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 87%;        /* gornja granica na sredini ekrana */
+    left: 17%;       /* lijeva granica na sredini */
+    transform: translate(-50%, 50px); /* centriranje + pomak 50px dolje */
+    text-shadow: 15px 15px 10px rgba(0, 0, 0, 1.0);
+}
+
+#unosContainer {
+    position: absolute;
+    font-weight: 100;
+    bottom: 160px;    /* udaljenost od dna */
+    left: 150px;        /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 258px;   
+     height: auto;
+     box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+}
+
+#unosContainer:hover {
+    background: rgba(255, 255, 255, 0.8);  /* tamniji background na hover */
+    transform: scale(1.05);       /* lagano povećanje */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7); /* naglašena sjena */
+}
+
+#unosContainer:hover #unosMinutanaziv {
+    color: rgba(152, 11, 11, 0.764); /* ili rgba(152,11,11,0.764) ako želiš tu boju */
+}
+
+#unosMinutanaziv{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#unosMinuta{
+    text-align: center;
+    width: 150px;      /* širina input polja */
+    height: 40px;   
+    font-size: 40px; 
+    margin-top: -10px;
+
+}
+
+#IzmjeriDuzinu{
+
+      position: absolute;
+    bottom: 80px;    /* udaljenost od dna */
+    left: 150px;        /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 280px;   
+     height: auto;
+     font-size: 25px; 
+    color: white;
+    box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+
+
+}
+
+
+
+#IzmjeriDuzinu:hover {
+    background: rgba(255, 255, 255, 0.8);  /* tamniji background na hover */
+    transform: scale(1.05);       /* lagano povećanje */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7); /* naglašena sjena */
+     color: rgba(152, 11, 11, 0.764); /* ili rgba(152,11,11,0.764) ako želiš tu boju */
+}
+
+
+#Start{
+
+      position: absolute;
+    bottom: 80px;    /* udaljenost od dna */
+    right: 150px;        /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 280px;   
+    height: 70px;
+     font-size:40px; 
+    color: white;
+    box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+
+
+}
+
+
+#Tajmer1{
+
+      position: absolute;
+    bottom: 280px;    /* udaljenost od dna */
+    right: 150px;        /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 100px;   
+    height: 70px;
+     font-size:40px; 
+    color: white;
+    box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+
+
+}
+#Tajmer1:hover {
+    background: rgba(255, 255, 255, 0.8);  /* tamniji background na hover */
+    transform: scale(1.05);       /* lagano povećanje */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7); /* naglašena sjena */
+     color: rgba(152, 11, 11, 0.764); /* ili rgba(152,11,11,0.764) ako želiš tu boju */
+}
+
+#Tajmer2{
+
+      position: absolute;
+    bottom: 280px;    /* udaljenost od dna */
+    right: 170px;        /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 100px;   
+    height: 70px;
+     font-size:40px; 
+    color: white;
+    box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+
+
+}
+
+#tajmer_Da_Ne{
+position: absolute; /* element izlazi iz normalnog toka i može se slobodno pomjerati */
+    top: 400px;  /* udaljenost od vrha stranice */
+    left: 1280px; /* udaljenost od lijeve strane stranice */
+    font-size: 48px;
+    color: white;
+
+}
+
+#Start:hover {
+    background: rgba(255, 255, 255, 0.8);  /* tamniji background na hover */
+    transform: scale(1.05);       /* lagano povećanje */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7); /* naglašena sjena */
+     color: rgba(152, 11, 11, 0.764); /* ili rgba(152,11,11,0.764) ako želiš tu boju */
+}
+#Reset {
+      position: absolute;
+    bottom: 185px;    /* udaljenost od dna */
+    right: 150px;        /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 280px;   
+     height: 70px;
+     font-size:40px; 
+    color: white;
+    box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+
+}
+
+#Reset:hover {
+    background: rgba(255, 255, 255, 0.8);  /* tamniji background na hover */
+    transform: scale(1.05);       /* lagano povećanje */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7); /* naglašena sjena */
+     color: rgba(152, 11, 11, 0.764); /* ili rgba(152,11,11,0.764) ako želiš tu boju */
+}
+
+@media (max-width: 390px) {
+    #brojLabel{
+
+    color: white;
+    font-size: 250px;
+    position: absolute;
+    top: 0%;        /* gornja granica na sredini ekrana */
+    left: 50%;       /* lijeva granica na sredini */
+    transform: translate(-50%, 50px); /* centriranje + pomak 50px dolje */
+     text-shadow: 15px 15px 10px rgba(0, 0, 0, 1.0);
+    }
+
+#tajmerLabel{
+
+    color: white;
+    font-size: 80px;
+    position: absolute;
+    top: 32%;        /* gornja granica na sredini ekrana */
+    left: 50%;       /* lijeva granica na sredini */
+    transform: translate(-50%, 50px); /* centriranje + pomak 50px dolje */
+    text-shadow: 15px 15px 10px rgba(0, 0, 0, 1.0);
+}
+
+#unosContainer {
+    position: absolute;
+    font-weight: 100;
+    bottom:300px;    /* udaljenost od dna */
+    left: 50px;        /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 258px;   
+     height: auto;
+     box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+}
+
+
+
+#IzmjeriDuzinu{
+
+      position: absolute;
+    bottom:220px;    /* udaljenost od dna */
+    left: 50px;         /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 280px;   
+     height: auto;
+     font-size: 25px; 
+    color: white;
+    box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+
+
+}
+
+
+#Start{
+
+      position: absolute;
+    bottom: 125px;    /* udaljenost od dna */
+    right: 62px;        /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 280px;   
+    height: 70px;
+     font-size:40px; 
+    color: white;
+    box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+
+
+}
+
+#Reset {
+      position: absolute;
+    bottom:32px;    /* udaljenost od dna */
+    right: 62px;         /* udaljenost od lijeve strane */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;      /* iznad svega */
+    background: rgba(152, 11, 11, 0.764); /* privremeno da vidiš container */
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center; 
+     width: 280px;   
+     height: 70px;
+     font-size:40px; 
+    color: white;
+    box-shadow:  10px 10px 10px rgba(0, 0, 0, 1.0);
+
+     transition: all 0.5s ease; /* trajanje 0.5s, polako */
+
+}
+
+
+
+#bodySlika{
+    position: absolute; /* omogućava slobodno pozicioniranje po ekranu */
+       top:-60px;
+       left:-30px;  /* udaljenost od lijeve strane */
+    width: 200px;       /* širina slike */
+    height: auto;       /* visina proporcionalna širini */
+    z-index: 1;      
+}
+#Copyright{
+    position: absolute; /* omogućava slobodno pozicioniranje po ekranu */
+       bottom:-25px;
+       left:105px; 
+       font-size: 20px;
+       font-family:'Times New Roman',Georgia,;
+
+}
+}
